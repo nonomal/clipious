@@ -48,6 +48,9 @@ pkgs.mkShell {
 
   echo "creating useful aliases..."
 
+
+  flutter config --jdk-dir ${pkgs.jdk21}/lib/openjdk
+
   ''+
   pkgs.lib.concatStrings (map (x: ''alias ${x.name}="${x.command}";'') aliases)
   +''
